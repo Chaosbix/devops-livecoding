@@ -6,8 +6,7 @@ on:
   pull_request:
     branches: [main]
   workflow_run:
-    workflows:
-      - Test Backend
+    workflows: ["Test Backend"]
     types:
       - completed
       
