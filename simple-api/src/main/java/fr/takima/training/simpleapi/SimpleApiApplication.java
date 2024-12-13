@@ -1,4 +1,4 @@
-//comment
+// comment
 package fr.takima.training.simpleapi;
 
 import org.springframework.boot.SpringApplication;
