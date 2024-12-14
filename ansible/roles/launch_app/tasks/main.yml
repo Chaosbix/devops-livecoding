@@ -1,0 +1,16 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for roles/launch_app
+- name: Launch app container
+  docker_container:
+    name: my_app
+    image: my_app_image:latest
+    state: started
+    restart_policy: always
+    network_mode: my_app_network
+    env:
+      APP_ENV: production
+      DB_HOST: my_database
+      DB_PORT: 5432
+      DB_USER: my_user
+      DB_PASSWORD: my_password

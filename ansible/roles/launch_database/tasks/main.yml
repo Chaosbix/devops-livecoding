@@ -1,0 +1,16 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for roles/launch_database
+- name: Launch database container
+  docker_container:
+    name: my_database
+    image: postgres:latest
+    state: started
+    restart_policy: always
+    network_mode: my_app_network
+    env:
+      POSTGRES_USER: my_user
+      POSTGRES_PASSWORD: my_password
+      POSTGRES_DB: my_database
+    volumes:
+      - /srv/db_data:/var/lib/postgresql/data
